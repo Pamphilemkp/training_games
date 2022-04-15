@@ -1,0 +1,17 @@
+
+body{
+   
+    padding: 0px;
+    margin: 0px;
+    
+    text-align:center;
+}
+#grid{
+    display: inline-grid;
+   grid-template-columns: 100px 100px 100px;
+    width: 100px;
+    height: 100px;
+    gap: 10px;
+    
+    
+}
