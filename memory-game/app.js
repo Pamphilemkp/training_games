@@ -100,6 +100,9 @@ if(option0 === option1){
        view[option1].removeEventListener('click',flip)
        cardwon.push(itemchosen)
        score.textContent = cardwon.length;
+       if(cardwon.length === (cards.length)/2){
+              grid.textContent = "Congratulations🥸 🤩 🥳 you won the game by finding all the match"
+       }
    }
    
    else{
