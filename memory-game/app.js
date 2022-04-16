@@ -38,82 +38,84 @@ const cards = [
     
 ]
 
-cards.sort( () => 0.5 -Math.random())
-console.log(cards)
-let  itemchosen =[];
-let itemchosenid =[];
+cards.sort(() => 0.5 - Math.random());
 
-const grid = document.querySelector('#grid')
-const score = document.querySelector('#result')
-let cardwon = [];
-    
-function createcards(){
-    for(let i = 0; i < cards.length; i++){
-    const block = document.createElement('img')
-    block.setAttribute('src','images/blank.png')
-    block.setAttribute('data-id', i)
-    block.addEventListener('click', flip)
-    grid.append(block)
-    
+ const grid = document.querySelector('#grid')
+ const score = document.querySelector('#result')
+ const win = document.querySelector('#win')
+ let cardClicked =[];
+ let cardClickedid = [];
+ const matchResult =[];
+ 
 
+
+function display(){ 
+ for(let i = 0; i < cards.length; i++){
+   const images = document.createElement("img")
+   images.setAttribute("src", 'images/blank.png')
+   images.setAttribute("data-id",i)
+   images.addEventListener('click',flip)
+   grid.append(images);
+   
 }
-
 }
-createcards()
-let count = [];
+display()
+
+
 function flip(){
-    let ids = this.getAttribute('data-id')
-    let item = cards[ids]
-    itemchosen.push(item.name)
-    itemchosenid.push(ids)
-    this.setAttribute('src',item.image)
-    if( itemchosen.length == 2) setTimeout(chechMatch,500)
-    console.log(itemchosen)
-    console.log(itemchosenid)
-    
-}
+    const ids = this.getAttribute('data-id')
+    cardClicked.push(cards[ids].name)
+    cardClickedid.push(ids)
+    this.setAttribute('src',cards[ids].image)
 
-let view =  document.querySelectorAll('img')
-
-    console.log(view)
-
-function chechMatch(){
-    
-let option0 = itemchosenid[0];
-let option1 = itemchosenid[1]; 
-
-
-
-console.log(option1, option0, itemchosen)
-
-if(option0 === option1){
-    alert('you have clicked the same image');
-    view[option0].setAttribute('src','images/blank.png')
-
-}
-   else if(itemchosen[0] === itemchosen[1]){
-       alert('you have got a much');
+    if(cardClicked.length === 2){
+        setTimeout(matchChecker,500)
        
-       view[option0].setAttribute('src','images/white.png')
-       view[option0].removeEventListener('click',flip)
-       view[option1].setAttribute('src','images/white.png')
-       view[option1].removeEventListener('click',flip)
-       cardwon.push(itemchosen)
-       score.textContent = cardwon.length;
-       if(cardwon.length === (cards.length)/2){
-              grid.textContent = "Congratulations🥸 🤩 🥳 you won the game by finding all the match"
-       }
-   }
+        
+    }
    
-   else{
-       alert('sorry check for a match')
-    view[option0].setAttribute('src','images/blank.png')
-    view[option1].setAttribute('src','images/blank.png')
-
-
-   }
    
-   console.log(cardwon)
-   itemchosen = [];
-   itemchosenid = [];
 }
+let view = document.querySelectorAll("img")
+
+
+
+ function matchChecker(){
+
+    let idone = cardClickedid[0];
+    let idtwo = cardClickedid[1];
+    
+
+if(idone === idtwo){
+    alert("you have clicked the same image 😀 😃, try to find it match")
+    view[idone].setAttribute('src','images/blank.png')
+}
+else if(cardClicked[0] === cardClicked[1]){
+    alert('well played 🥲 ☺️ 😊, try to find more match and win the game')
+    view[idone].setAttribute('src','images/white.png')
+    view[idone].removeEventListener("click",flip)
+    view[idtwo].setAttribute('src','images/white.png')
+    view[idtwo].removeEventListener("click",flip)
+    matchResult.push(cardClicked[1])
+
+    score.textContent = matchResult.length;
+
+    if(matchResult.length === (cards.length)/2){
+        win.innerHTML = ` Congratulations 🤩👏🥳🙌 <br/> <br/> <br/> 
+        <img src='images/congratulation.jfif' alt="you win" >`
+    }
+    
+    
+}
+
+else{
+    alert("sorry those images don't match 🥺 😢, try to find their matches")
+    view[idone].setAttribute('src','images/blank.png')
+    view[idtwo].setAttribute('src','images/blank.png')
+}
+
+
+cardClicked = [];
+cardClickedid = [];
+
+ }
