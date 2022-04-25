@@ -1,6 +1,6 @@
 
  const grid = document.querySelector('#grid')
- const next_level = document.querySelector('#next-level')
+ const next_level = document.querySelector('#next-level1')
  const score = document.querySelector('#result')
  const win = document.querySelector('#win')
  const retry = document.querySelector('#retry')
@@ -18,44 +18,44 @@
 
 function level1(){
     const cards = [
-    {
-        name:'cheeseburger',image:'images/cheeseburger.png'
-    },
-    {
-        name:'fries',image:'images/fries.png'
-    },
-    {
-        name:'hotdog',image:'images/hotdog.png'
-    },
-    {
-        name:'ice-cream',image:'images/ice-cream.png'
-    },
-    {
-        name:'milkshake',image:'images/milkshake.png'
-    },
-    {
-        name:'pizza',image:'images/pizza.png'
-    },
-    {
-        name:'cheeseburger',image:'images/cheeseburger.png'
-    },
-    {
-        name:'fries',image:'images/fries.png'
-    },
-    {
-        name:'hotdog',image:'images/hotdog.png'
-    },
-    {
-        name:'ice-cream',image:'images/ice-cream.png'
-    },
-    {
-        name:'milkshake',image:'images/milkshake.png'
-    },
-    {
-        name:'pizza',image:'images/pizza.png'
-    }
+        {
+            name:'earth',image:'images/level2/earth.jfif'
+        },
+        {
+            name:'game',image:'images/level2/game.jfif'
+        },
+        {
+            name:'glass',image:'images/level2/glass.jfif'
+        },
+        {
+            name:'juice',image:'images/level2/juice.jfif'
+        },
+        {
+            name:'kapompelo',image:'images/level2/kapompelo.jfif'
+        },
+        {
+            name:'shelf',image:'images/level2/shelf.jfif'
+        },
+        {
+            name:'earth',image:'images/level2/earth.jfif'
+        },
+        {
+            name:'game',image:'images/level2/game.jfif'
+        },
+        {
+            name:'glass',image:'images/level2/glass.jfif'
+        },
+        {
+            name:'juice',image:'images/level2/juice.jfif'
+        },
+        {
+            name:'kapompelo',image:'images/level2/kapompelo.jfif'
+        },
+        {
+            name:'shelf',image:'images/level2/shelf.jfif'
+        }
+    ]
     
-]
 
 cards.sort(() => 0.5 - Math.random());
 console.log(cards)
@@ -83,7 +83,7 @@ function flip(){
     this.setAttribute('src',cards[ids].image)
 
     if(cardClicked.length === 2){
-        setTimeout(matchChecker,500)
+        setTimeout(matchChecker,800)
        
         
     }
@@ -101,16 +101,16 @@ let view = document.querySelectorAll("img")
     
 
 if(idone === idtwo){
-        //deleted
+    //deleted
     /*alert("you have clicked the same image 😀 😃, try to find its match")*/
 
     //new added s
-    legend.textContent ="you have clicked the same image 😀 😃, try to find its match"
+    legend.textContent ="you have clicked the same image 😀 😃, try to find it match"
     //new added
     view[idone].setAttribute('src','images/blank.jfif')
 }
 else if(cardClicked[0] === cardClicked[1]){
-     // deleted
+    // deleted
        /*alert('well played 🥲 ☺️ 😊, try to find more matches and win the game')*/
     
     //new added s
@@ -130,10 +130,11 @@ else if(cardClicked[0] === cardClicked[1]){
         const next = document.createElement("button")
         const text = document.createTextNode("⏩next")
         next.setAttribute("id","button")
+        next.setAttribute("style","margin-bottom:-55px;")
         next.appendChild(text);
         next_level.appendChild(next);
 
-        //retry
+        //retry 
         const refresher = document.createElement("button")
         const text1 = document.createTextNode("🔁Replay")
         refresher.setAttribute("id","button")
@@ -142,10 +143,13 @@ else if(cardClicked[0] === cardClicked[1]){
         refresher.addEventListener("click",reloadpage)
         refresher.appendChild(text1);
         retry.appendChild(refresher);
-        //added
+
+
+        //new added s
         level.textContent="";
         legend.textContent ="";
         paragraph.textContent ="";
+        //new added 
 
         function reloadpage(){
             location.reload()
@@ -156,7 +160,7 @@ else if(cardClicked[0] === cardClicked[1]){
 }
 
 else{
-       //deleted
+      //deleted
    /* alert("sorry those images don't match 🥺 😢, try to find their matches")*/
 
     //new added s

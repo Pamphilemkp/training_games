@@ -1,61 +1,61 @@
 
  const grid = document.querySelector('#grid')
- const next_level = document.querySelector('#next-level')
+ const next_level = document.querySelector('#next-level2')
  const score = document.querySelector('#result')
  const win = document.querySelector('#win')
  const retry = document.querySelector('#retry')
-  //new added s
-  const phone = document.querySelector(".phone")
-  const level = document.querySelector("#level")
-  const paragraph = document.querySelector("#paragraph")
-  const legend = document.querySelector("#status")
- 
-  //new added 
+   //new added s
+ const phone = document.querySelector(".phone")
+ const level = document.querySelector("#level")
+ const paragraph = document.querySelector("#paragraph")
+ const legend = document.querySelector("#status")
+  
+   //new added 
  let cardClicked =[];
  let cardClickedid = [];
  const matchResult =[];
  
 
-function level1(){
+function level3(){
     const cards = [
-    {
-        name:'cheeseburger',image:'images/cheeseburger.png'
-    },
-    {
-        name:'fries',image:'images/fries.png'
-    },
-    {
-        name:'hotdog',image:'images/hotdog.png'
-    },
-    {
-        name:'ice-cream',image:'images/ice-cream.png'
-    },
-    {
-        name:'milkshake',image:'images/milkshake.png'
-    },
-    {
-        name:'pizza',image:'images/pizza.png'
-    },
-    {
-        name:'cheeseburger',image:'images/cheeseburger.png'
-    },
-    {
-        name:'fries',image:'images/fries.png'
-    },
-    {
-        name:'hotdog',image:'images/hotdog.png'
-    },
-    {
-        name:'ice-cream',image:'images/ice-cream.png'
-    },
-    {
-        name:'milkshake',image:'images/milkshake.png'
-    },
-    {
-        name:'pizza',image:'images/pizza.png'
-    }
+        {
+            name:'chopstick',image:'images/level3/chopstick.jfif'
+        },
+        {
+            name:'elephant',image:'images/level3/elephant.jfif'
+        },
+        {
+            name:'fire',image:'images/level3/fire.jfif'
+        },
+        {
+            name:'moonview',image:'images/level3/moonview.jfif'
+        },
+        {
+            name:'planet',image:'images/level3/planet.jfif'
+        },
+        {
+            name:'view0',image:'images/level3/view0.jfif'
+        },
+        {
+            name:'chopstick',image:'images/level3/chopstick.jfif'
+        },
+        {
+            name:'elephant',image:'images/level3/elephant.jfif'
+        },
+        {
+            name:'fire',image:'images/level3/fire.jfif'
+        },
+        {
+            name:'moonview',image:'images/level3/moonview.jfif'
+        },
+        {
+            name:'planet',image:'images/level3/planet.jfif'
+        },
+        {
+            name:'view0',image:'images/level3/view0.jfif'
+        }
+    ]
     
-]
 
 cards.sort(() => 0.5 - Math.random());
 console.log(cards)
@@ -83,7 +83,7 @@ function flip(){
     this.setAttribute('src',cards[ids].image)
 
     if(cardClicked.length === 2){
-        setTimeout(matchChecker,500)
+        setTimeout(matchChecker,800)
        
         
     }
@@ -102,15 +102,15 @@ let view = document.querySelectorAll("img")
 
 if(idone === idtwo){
         //deleted
-    /*alert("you have clicked the same image 😀 😃, try to find its match")*/
+    /*alert("you have clicked the same image 😀 😃, try to find the match")*/
 
     //new added s
-    legend.textContent ="you have clicked the same image 😀 😃, try to find its match"
+    legend.textContent ="you have clicked the same image 😀 😃, try to find it match"
     //new added
     view[idone].setAttribute('src','images/blank.jfif')
 }
 else if(cardClicked[0] === cardClicked[1]){
-     // deleted
+        // deleted
        /*alert('well played 🥲 ☺️ 😊, try to find more matches and win the game')*/
     
     //new added s
@@ -130,22 +130,26 @@ else if(cardClicked[0] === cardClicked[1]){
         const next = document.createElement("button")
         const text = document.createTextNode("⏩next")
         next.setAttribute("id","button")
+        next.setAttribute("style","margin-bottom:-55px;")
         next.appendChild(text);
         next_level.appendChild(next);
-
-        //retry
+   ///retry
         const refresher = document.createElement("button")
-        const text1 = document.createTextNode("🔁Replay")
+        const text1 = document.createTextNode("Replay")
         refresher.setAttribute("id","button")
         refresher.setAttribute("style","margin-top:-55px;")
         refresher.setAttribute("style","margin-right:29px;")
         refresher.addEventListener("click",reloadpage)
         refresher.appendChild(text1);
         retry.appendChild(refresher);
-        //added
+
+
+                //new added s
+
         level.textContent="";
         legend.textContent ="";
         paragraph.textContent ="";
+                //new added 
 
         function reloadpage(){
             location.reload()
@@ -156,7 +160,7 @@ else if(cardClicked[0] === cardClicked[1]){
 }
 
 else{
-       //deleted
+      //deleted
    /* alert("sorry those images don't match 🥺 😢, try to find their matches")*/
 
     //new added s
@@ -173,7 +177,7 @@ cardClickedid = [];
  }
  }
 
- level1()
+ level3()
 
 
 
