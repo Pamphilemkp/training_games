@@ -10,7 +10,7 @@ let clickId = 0;
 let randomId=0;
 let randomPosition 
 let time = 60;
-let minimum = 10;
+let minimum = 15;
 
 //setting  after game win or lose
 const next = document.querySelector("#next")
@@ -55,6 +55,18 @@ function clearer(){
     if(time === 0){
         clearInterval(timer)
         clearInterval(timeremaining)
+
+
+        
+        //back
+        const backward =  document.createElement("button")
+        const text2 = document.createTextNode("Back ⏪")
+        backward.appendChild(text2)
+        back.appendChild(backward)
+        back.style.marginTop = "20px";
+
+
+
         //reload the window 
         const refresher = document.createElement("button")
         const text = document.createTextNode("Replay 🔁")
@@ -62,7 +74,8 @@ function clearer(){
         refresher.addEventListener("click",replayer)
         replay.appendChild(refresher)
 
-        
+
+
         function replayer(){
             window.location.reload();
         }
@@ -93,6 +106,8 @@ function clearer(){
         winFinal.appendChild(text1)
         next.appendChild(winFinal)
         next.style.marginTop = "20px";
+
+
 
         //setting best score
         let actualCount = localStorage.getItem("bestScore")

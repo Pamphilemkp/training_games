@@ -1,0 +1,92 @@
+body{
+    background-image: url("bgfree.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-size: 2.8vw;
+    font-size: 2.8vh;
+    background-size:cover;
+    font-family: monospace;
+
+    animation-name: image;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+
+    
+
+}
+@keyframes image{
+    from{opacity:0; width: 0%;height: 0%;}
+    to{opacity:1; width: 100%;height: 100%;}
+}
+
+.hey{
+    animation-name: text;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes text{
+    0%{opacity:0;}
+    50%{opacity:0.5;}
+    100%{opacity:1;}
+}
+
+h1{
+    font-size: 4.8vw;
+    font-size: 4.8vh; 
+    text-transform: uppercase;
+    animation: pages 3s ease-in-out 0.5 1 ;
+    background: linear-gradient(to right,
+    rgb(79, 32, 88),
+    hsl(0,0%, 100%),
+    rgb(221, 153, 235)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: mkp 3s linear infinite;
+    padding: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+@keyframes mkp{
+    0%{background-position: 0px;}
+    60%{background-position: 400px;}
+    100%{background-position: 700px;}
+}
+a{
+    text-decoration: none;
+    transition: all 1s ease-in;
+    color: hsl(0, 0%, 100%);
+}
+a:hover{
+    color: hsl(273, 84%, 32%);
+}
+a:focus{
+    color: hsl(352, 71%, 48%);
+}
+
+button{
+    border: none;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width:480px){
+    body{
+        font-size: 1.5vw;
+        font-size: 1.5vh;
+    }
+    h1{
+        font-size: 1.5vw;
+        font-size: 1.5vh;
+    }
+}

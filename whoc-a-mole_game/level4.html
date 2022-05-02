@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>level4</title>
+</head>
+<body>
+    <div class="head">
+        <h2 id="level" class="w3-xxxlarge font-effect-shadow-multiple">Level 4</h2>
+        <div class="container">
+        <div class="item">
+        <h2 class="w3-xlarge font-effect-shadow-multiple">Score: <span id="score">0</span></h2>
+        <h2 class="w3-xlarge font-effect-shadow-multiple">Time left: <span id="time-left">0</span></h2>
+        </div>
+        <div class="item">
+        <h2 class="w3-xlarge font-effect-shadow-multiple">Best score: <span id="best-score">0</span></h2>
+        <h2 class="w3-xlarge font-effect-shadow-multiple">Min score: <span id="score-hit">25</span></h2>
+        </div>
+        </div>
+    </div>
+    
+       <div class="grid">
+    
+            <div class="square" id="0"></div>
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+            
+       </div>
+       <div id="Endgame">
+        <a id="back"  href="level3.html"></a>
+        <a id="replay"></a>
+       <a id="next" href="winpage.html"></a>
+     
+       </div>
+       
+       <div class="audio-background">
+        <audio id="myAudio"  autoplay loop >
+         <source src="audio1.mp3" type="audio/mpeg" autostart="true" autoplay="true" >
+         <source src="audio1.ogg" type="audio/ogg" autostart="true" autoplay="true" >
+         Your browser does not support the audio element.
+       </audio>
+     
+     
+       <p class="audio-trext"> Sounds </p>
+     
+     <button onclick="StartSound()" type="button" id="bt1">🔈</button>
+     <button onclick="pauseSound()" type="button" id="bt2">🔇</button>
+     </div>
+    
+    <script>
+    
+    const sound = document.getElementById("myAudio")
+    sound.autoplay = true;
+    function StartSound(){
+    sound.play();
+    }
+    function pauseSound(){
+    sound.pause();
+    }
+    </script>
+       
+        <script src="app2.js"></script>
+</body>
+</html>

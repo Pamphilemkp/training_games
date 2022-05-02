@@ -5,14 +5,17 @@ body{
     margin: 0;
     font-size:3vh;
     padding: 0;
- 
+    margin-top: -21px;
+    
+   
 }
 .head{
     opacity: 0.8;
-    background-image: url("bgfree.jfif");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZQMEf2hDbNpbeCvaR_cxAqhlcDUGOqdxZg&usqp=CAU");
     background-color: wheat;
     background-repeat: no-repeat;
     background-size: cover;
+   
 
 }
 
@@ -29,7 +32,7 @@ body{
     gap:10px;
    /* margin: 0px 15px;*/
    background-color: black;
-    background-image: url("images/bgg.jpg");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyLrKh8kGdWqUOnHcW_8mQsbDAV0GubsuAOg&usqp=CAU");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -53,9 +56,9 @@ body{
 }
 
 .mole{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX0tfVOljjFvsgyjtCdTdoWBv3-qi_jIGKlA&usqp=CAU");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD_6GbKGfQuYtR5z-0uA-V1zcgIq2KNYZJKA&usqp=CAU");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     animation-name: mole;
     animation-duration: 0.5;
     animation-timing-function: ease-out;
@@ -95,9 +98,6 @@ h2{
         justify-content:flex-start;
         align-items:flex-end;
         margin: 0px 20px;
-    }
-    .mole{
-        background-size: contain;
     }
     
 }
